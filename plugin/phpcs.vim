@@ -247,7 +247,6 @@ function! phpcs#phpcsCheck(...)
     set errorformat=%f:%l:%c:\ %t%*[a-zA-Z]\ -\ %m
     cgetexpr cs_list
     set errorformat=errfmt_saved
-    cwindow
 endfunction
 
 function! phpcs#handleChanges(...)
