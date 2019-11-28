@@ -250,5 +250,15 @@ function! phpcs#phpcsCheck(...)
     cwindow
 endfunction
 
+function! phpcs#handleChanges(...)
+	call phpcs#phpcsCheck()
+endfunction
+
+augroup phpcs
+	autocmd!
+	autocmd TextChanged * call phpcs#handleChanges()
+	autocmd TextChangedI * call phpcs#handleChanges()
+augroup END
+
 " Define the Phpcs command
 command! -nargs=? Phpcs call phpcs#phpcsCheck(<f-args>)
