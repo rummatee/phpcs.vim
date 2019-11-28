@@ -245,7 +245,7 @@ function! phpcs#phpcsCheck(...)
     " show result
     let errfmt_saved=&errorformat
     set errorformat=%f:%l:%c:\ %t%*[a-zA-Z]\ -\ %m
-    cgetexpr cs_list
+    lgetexpr cs_list
     set errorformat=errfmt_saved
 endfunction
 
